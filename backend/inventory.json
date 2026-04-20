@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "inventory_name": "Тест 1",
+    "description": "Тестовий опис",
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
+  },
+  {
+    "id": 2,
+    "inventory_name": "Тест 2",
+    "description": "Тестовий опис",
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
+  },
+  {
+    "id": 3,
+    "inventory_name": "Тест 3",
+    "description": "Тестовий опис",
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
+  },
+  {
+    "id": 4,
+    "inventory_name": "Тест 4",
+    "description": "Довгий тестовий опис опис опис опис опис опис опис ",
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
+  },
+  {
+    "id": 5,
+    "inventory_name": "Тест 5",
+    "description": "Тестовий опис",
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
+  }, 
+  {
+    "id": 6,
+    "inventory_name": "Тест 6",
+    "description": "Тестовий опис",
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
+  }
+]
