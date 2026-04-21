@@ -28,11 +28,5 @@
     "inventory_name": "Тест 5",
     "description": "Тестовий опис",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
-  }, 
-  {
-    "id": 6,
-    "inventory_name": "Тест 6",
-    "description": "Тестовий опис",
-    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
   }
 ]

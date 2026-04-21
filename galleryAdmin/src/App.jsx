@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { InventoryProvider } from './store/InventoryContext';
 import AdminInventory from './pages/AdminInventory';
+import AdminInventoryCreate from './pages/AdminInventoryCreate';
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<AdminInventory />} />
                     <Route path="/admin" element={<AdminInventory />} />
+                    <Route path="/admin/create" element={<AdminInventoryCreate />} />
                 </Routes>
             </BrowserRouter>
         </InventoryProvider>

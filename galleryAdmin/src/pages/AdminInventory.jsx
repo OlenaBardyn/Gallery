@@ -2,8 +2,11 @@ import { useInventory } from '../store/InventoryContext';
 import InventoryTable from '../components/inventory/InventoryTable';
 import { deleteInventory } from '../services/inventoryApi';
 import './AdminInventory.css';
+import { useNavigate } from 'react-router-dom';
 
 function AdminInventory() {
+    const navigate = useNavigate();
+
     const { inventory, loading, error, loadInventory } = useInventory();
 
     const handleView = (id) => {
@@ -41,12 +44,9 @@ function AdminInventory() {
     return (
         <div className="admin-container">
             <h1 className="admin-title">Інвентар адмін-панель</h1>
-            <button 
-                className="create-btn"
-                onClick={() => alert('Placeholder: Створення буде пізніше')}
-            >
-                + Створити нову позицію
-            </button>
+            <button onClick={() => window.location.href = '/admin/create'}>
+                + Створити
+            </button>   
             <InventoryTable 
                 inventory={inventory}
                 onView={handleView}
