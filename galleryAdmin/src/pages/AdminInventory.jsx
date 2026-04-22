@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { useInventory } from '../store/InventoryContext';
 import InventoryTable from '../components/inventory/InventoryTable';
 import { deleteInventory } from '../services/inventoryApi';
+import ConfirmModal from '../components/inventory/ConfirmModal';
 import './AdminInventory.css';
-
 
 function AdminInventory() {
     const { inventory, loading, error, loadInventory } = useInventory();
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [itemToDelete, setItemToDelete] = useState(null);
 
     const handleView = (id) => {
         window.location.href = `/admin/details/${id}`;
@@ -15,11 +18,21 @@ function AdminInventory() {
         window.location.href = `/admin/edit/${id}`;
     };
 
-    const handleDelete = async (id) => {
-        if (window.confirm('Ви впевнені?')) {
-            await deleteInventory(id);
-            loadInventory();
-        }
+    const handleDeleteClick = (id) => {
+        setItemToDelete(id);
+        setShowDeleteModal(true);
+    };
+
+    const handleConfirmDelete = async () => {
+        await deleteInventory(itemToDelete);
+        await loadInventory();
+        setShowDeleteModal(false);
+        setItemToDelete(null);
+    };
+
+    const handleCancelDelete = () => {
+        setShowDeleteModal(false);
+        setItemToDelete(null);
     };
 
     if (loading) return <div className="loading-state">Завантаження...</div>;
@@ -35,7 +48,15 @@ function AdminInventory() {
                 inventory={inventory}
                 onView={handleView}
                 onEdit={handleEdit}
-                onDelete={handleDelete}
+                onDelete={handleDeleteClick}
+            />
+            
+            <ConfirmModal 
+                isOpen={showDeleteModal}
+                onConfirm={handleConfirmDelete}
+                onCancel={handleCancelDelete}
+                title="Видалення товару"
+                message="Ви впевнені, що хочете видалити цю позицію? Цю дію не можна скасувати."
             />
         </div>
     );
