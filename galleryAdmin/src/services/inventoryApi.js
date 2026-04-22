@@ -29,3 +29,8 @@ export async function deleteInventory(id) {
     });
     return res.json();
 }
+
+export async function getInventoryById(id) {
+    const res = await fetch(`${API_URL}/${id}`);
+    return res.json();
+}

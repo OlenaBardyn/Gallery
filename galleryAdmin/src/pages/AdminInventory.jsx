@@ -10,7 +10,7 @@ function AdminInventory() {
     const { inventory, loading, error, loadInventory } = useInventory();
 
     const handleView = (id) => {
-        alert(`Placeholder: Перегляд буде пізніше`);
+        window.location.href = `/admin/details/${id}`;
     };
 
     const handleEdit = (id) => {

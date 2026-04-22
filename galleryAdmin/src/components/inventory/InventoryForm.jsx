@@ -24,7 +24,7 @@ function InventoryForm({ onSubmit, initialData = {} }) {
         onSubmit({
             inventory_name: name,
             description: desc,
-            photo_url: photoBase64 || 'https://via.placeholder.com/100'
+            photo_url: photoBase64 || "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/960px-Placeholder_view_vector.svg.png"
         });
     };
 
