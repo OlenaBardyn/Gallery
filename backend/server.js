@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require('express'); // фреймворк для створення сервера
 const fs = require('fs');
 const app = express();
 const PORT = 3000;
 
-// ЗБІЛЬШУЄМО ЛІМІТ для base64 фото
+// ліміт для base64 фото
 app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.urlencoded({ limit: '50mb', extended: true })); //Дозволяє вкладені об'єкти. Якщо false — тільки прості рядки та масиви
 
 // CORS
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', '*'); // дозволити всім доменам
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();

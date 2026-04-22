@@ -1,7 +1,12 @@
-const API_URL = 'http://localhost:3000/inventory';
+const API_URL = 'http://localhost:3000/inventory'; //сюди будуть йти всі запити
 
 export async function getAllInventory() {
     const res = await fetch(API_URL);
+    return res.json();
+}
+
+export async function getInventoryById(id) {
+    const res = await fetch(`${API_URL}/${id}`);
     return res.json();
 }
 
@@ -27,10 +32,5 @@ export async function deleteInventory(id) {
     const res = await fetch(`${API_URL}/${id}`, {
         method: 'DELETE'
     });
-    return res.json();
-}
-
-export async function getInventoryById(id) {
-    const res = await fetch(`${API_URL}/${id}`);
     return res.json();
 }
