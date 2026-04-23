@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getInventoryById } from '../services/inventoryApi';
+import './AdminInventoryDetails.css';
 
 function AdminInventoryDetails() {
-    // Отримуємо ID з URL
     const id = window.location.pathname.split('/').pop();
     const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -14,26 +14,35 @@ function AdminInventoryDetails() {
         });
     }, [id]);
 
-    if (loading) return <div style={{ padding: '20px' }}>Завантаження...</div>;
-    if (!item) return <div style={{ padding: '20px' }}>Товар не знайдено</div>;
+    if (loading) return <div className="loading-state">Завантаження...</div>;
+    if (!item) return <div className="error-state">Товар не знайдено</div>;
 
     return (
-        <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-            <h1>{item.inventory_name}</h1>
-            
-            {item.photo_url && (
-                <img 
-                    src={item.photo_url} 
-                    alt={item.inventory_name}
-                    style={{ maxWidth: '100%', borderRadius: '10px', marginBottom: '20px' }}
-                />
-            )}
-            
-            <p><strong>Опис:</strong></p>
-            <p>{item.description || 'Немає опису'}</p>
-            
-            <br />
-            <a href="/admin">← Назад до списку</a>
+        <div className="details-container">
+            <div className="details-card">
+                {item.photo_url && (
+                    <img 
+                        src={item.photo_url} 
+                        alt={item.inventory_name}
+                        className="details-image"
+                    />
+                )}
+                
+                <div className="details-content">
+                    <h1 className="details-title">{item.inventory_name}</h1>
+                    
+                    <div className="details-section">
+                        <div className="details-section-title">Опис</div>
+                        <div className="details-description">
+                            {item.description || 'Немає опису'}
+                        </div>
+                    </div>
+                    
+                    <a href="/admin" className="details-back-link">
+                        ← Назад до списку
+                    </a>
+                </div>
+            </div>
         </div>
     );
 }

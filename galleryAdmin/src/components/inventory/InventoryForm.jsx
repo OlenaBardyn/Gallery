@@ -29,7 +29,7 @@ function InventoryForm({ onSubmit, initialData = {} }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} style={{ maxWidth: '500px', margin: '0 auto' }}>
+        <form onSubmit={handleSubmit} style={{ maxWidth: '500px', margin: '0 auto'}}>
             <div style={{ marginBottom: '15px' }}>
                 <label>Назва *</label><br />
                 <input 
@@ -60,12 +60,12 @@ function InventoryForm({ onSubmit, initialData = {} }) {
                 />
                 {preview && (
                     <div style={{ marginTop: '10px' }}>
-                        <img src={preview} alt="Preview" style={{ maxWidth: '150px', borderRadius: '8px' }} />
+                        <img src={preview} alt="Preview" style={{ maxWidth: '150px', borderRadius: '8px'}} />
                     </div>
                 )}
             </div>
             
-            <button type="submit" style={{ padding: '10px 20px', cursor: 'pointer' }}>
+            <button type="submit" style={{ padding: '10px 20px', cursor: 'pointer', background: '#006eff', border: 'none', borderRadius: '3px'}}>
                 Зберегти
             </button>
         </form>

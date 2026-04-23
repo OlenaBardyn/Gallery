@@ -26,7 +26,7 @@ function InventoryTable({ inventory, onView, onEdit, onDelete }) {
                                     src={item.photo_url} 
                                     alt={item.inventory_name}
                                     className="inventory-image"
-                                    style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px' }}
+                                    style={{ width: '65px', height: '50px', objectFit: 'cover', borderRadius: '8px' }}
                                 />
                             </td>
                             <td className="actions-cell">

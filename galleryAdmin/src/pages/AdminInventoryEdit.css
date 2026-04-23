@@ -1,0 +1,48 @@
+.edit-container {
+    padding: 32px 24px;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+.edit-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.edit-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.edit-back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.edit-back-link:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.error-message {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-radius: 12px;
+    font-size: 14px;
+    border: 1px solid #fecaca;
+}

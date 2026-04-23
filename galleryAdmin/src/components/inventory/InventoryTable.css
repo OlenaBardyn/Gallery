@@ -1,60 +1,122 @@
+/* Контейнер таблиці */
 .inventory-table-container {
     overflow-x: auto;
 }
 
+/* Таблиця */
 .inventory-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
+    font-size: 14px;
 }
 
+/* Заголовки */
 .inventory-table th {
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 14px 12px;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-weight: 600;
     text-align: left;
-    background-color: #f2f2f2;
+    border: 1px solid #cbd5e1;
 }
 
+/* Рядки */
 .inventory-table td {
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 14px 12px;
+    border: 1px solid #cbd5e1;
+    vertical-align: middle;
+    background-color: white;
 }
 
+/* Hover ефект */
+.inventory-table tbody tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* Назва товару */
+.inventory-name {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Опис */
+.inventory-description {
+    color: #475569;
+    line-height: 1.4;
+}
+
+/* Фото */
 .photo-cell {
     text-align: center;
 }
 
 .inventory-image {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
 }
 
+/* Кнопки дій */
 .actions-cell {
     text-align: center;
+    white-space: nowrap;
+}
+
+.view-btn, .edit-btn, .delete-btn {
+    margin: 0 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    transition: all 0.2s ease;
 }
 
 .view-btn {
-    margin: 0 5px;
-    cursor: pointer;
-    background-color: rgb(151, 187, 228);
-    border: 1px solid rgba(27, 31, 35, .15);
-    border-radius: 6px;
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.view-btn:hover {
+    background-color: #cbd5e1;
 }
 
 .edit-btn {
-    margin: 0 5px;
-    cursor: pointer;
-    background-color: rgb(113, 152, 197);
-    border: 1px solid rgba(27, 31, 35, .15);
-    border-radius: 6px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.edit-btn:hover {
+    background-color: #bfdbfe;
 }
 
 .delete-btn {
-    margin: 0 5px;
-    cursor: pointer;
-    background-color: rgb(203, 68, 68);
-    border: 1px solid rgba(27, 31, 35, .15);
-    border-radius: 6px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.delete-btn:hover {
+    background-color: #fecaca;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .inventory-table th,
+    .inventory-table td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+    
+    .view-btn, .edit-btn, .delete-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .inventory-image {
+        width: 36px;
+        height: 36px;
+    }
 }

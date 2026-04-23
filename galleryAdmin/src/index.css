@@ -109,3 +109,16 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+input, textarea {
+    background-color: #e9edf1 !important;
+    border: 1px solid #96919f !important;
+    color: black;
+}
+
+input:focus, textarea:focus {
+    background-color: #ffffff !important;
+    border-color: #4d455b !important;
+    outline: none !important;
+    color: black;
+}
