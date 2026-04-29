@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { getAllInventory, getInventoryById } from '../services/inventoryApi';
 import InventoryGallery from '../components/gallery/InventoryGallery';
 import InventoryQuickView from '../components/gallery/InventoryQuickView';
+import { useFavorites } from '../hooks/useFavorites';
+
 
 function Gallery() {
     const [items, setItems] = useState([]);
@@ -9,6 +11,8 @@ function Gallery() {
     const [error, setError] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
     const [quickViewOpen, setQuickViewOpen] = useState(false);
+    
+    const { favorites, toggleFavorite } = useFavorites();
 
     useEffect(() => {
         loadItems();
@@ -68,13 +72,22 @@ function Gallery() {
 
     return (
         <div className="gallery-container">
-            <h1 className="gallery-title">Галерея інвентарю</h1>
-            <InventoryGallery items={items} onCardClick={handleCardClick} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 20px 0 20px' }}>
+                <h1 className="gallery-title" style={{ margin: 0 }}>Галерея інвентарю</h1>
+                <a href="/favorites" style={{ fontSize: '18px', textDecoration: 'none' }}>
+                    ❤️ Улюблені ({favorites.length})
+                </a>
+            </div>
+            <InventoryGallery 
+                items={items} 
+                onCardClick={handleCardClick}
+                onFavoriteToggle={toggleFavorite}
+                favorites={favorites}
+            />
             
             <InventoryQuickView 
                 item={selectedItem}
                 onClose={handleCloseQuickView}
-                isOpen={quickViewOpen}
             />
         </div>
     );
