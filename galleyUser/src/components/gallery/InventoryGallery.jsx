@@ -5,8 +5,8 @@ function InventoryGallery({ items, onCardClick, onFavoriteToggle, favorites }) {
         <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '24px',
-            padding: '20px'
+            gap: '30px',
+            padding: '80px'
         }}>
             {items.map((item) => (
                 <InventoryCard 
