@@ -1,14 +1,13 @@
 .favorites-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .favorites-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    padding: 20px 40px;
     flex-wrap: wrap;
     gap: 15px;
 }
@@ -16,13 +15,13 @@
 .favorites-header h1 {
     margin: 0;
     font-size: 28px;
-    color: #f8f3f3;
+    color: #e8ebed;
 }
 
 .back-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #3b82f6;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -30,38 +29,39 @@
 }
 
 .back-link:hover {
-    background-color: #0056b3;
+    background-color: #2563eb;
 }
 
 .favorites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 24px;
+    padding: 40px;
 }
 
 .favorites-loading,
 .favorites-error,
 .favorites-empty {
     text-align: center;
-    padding: 50px;
+    padding: 60px;
     font-size: 18px;
-    color: #666;
+    color: #64748b;
 }
 
 .favorites-error {
-    color: #dc3545;
+    color: #dc2626;
 }
 
 .empty-link {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #3b82f6;
     color: white;
     text-decoration: none;
     border-radius: 8px;
 }
 
 .empty-link:hover {
-    background-color: #0056b3;
+    background-color: #2563eb;
 }
