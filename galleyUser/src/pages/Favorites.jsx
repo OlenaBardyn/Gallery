@@ -4,6 +4,7 @@ import { useFavorites } from '../hooks/useFavorites';
 import InventoryCard from '../components/gallery/InventoryCard';
 import InventoryQuickView from '../components/gallery/InventoryQuickView';
 import './Favorites.css';
+import Loading from '../components/Loading';
 
 function Favorites() {
     const [allItems, setAllItems] = useState([]);
@@ -48,11 +49,7 @@ function Favorites() {
     };
 
     if (loading) {
-        return (
-            <div className="favorites-loading">
-                <p>Завантаження...</p>
-            </div>
-        );
+        return <Loading />;
     }
 
     if (error) {

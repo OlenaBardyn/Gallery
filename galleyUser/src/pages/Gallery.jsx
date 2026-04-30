@@ -3,7 +3,7 @@ import { getAllInventory, getInventoryById } from '../services/inventoryApi';
 import InventoryGallery from '../components/gallery/InventoryGallery';
 import InventoryQuickView from '../components/gallery/InventoryQuickView';
 import { useFavorites } from '../hooks/useFavorites';
-
+import Loading from '../components/Loading';
 
 function Gallery() {
     const [items, setItems] = useState([]);
@@ -47,11 +47,7 @@ function Gallery() {
     };
 
     if (loading) {
-        return (
-            <div style={{ padding: '40px', textAlign: 'center' }}>
-                <p>Завантаження...</p>
-            </div>
-        );
+        return <Loading />;
     }
 
     if (error) {
