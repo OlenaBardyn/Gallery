@@ -4,6 +4,7 @@ import InventoryGallery from '../components/gallery/InventoryGallery';
 import InventoryQuickView from '../components/gallery/InventoryQuickView';
 import { useFavorites } from '../hooks/useFavorites';
 import Loading from '../components/Loading';
+import './Gallery.css';
 
 function Gallery() {
     const [items, setItems] = useState([]);
@@ -11,8 +12,7 @@ function Gallery() {
     const [error, setError] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
     const [quickViewOpen, setQuickViewOpen] = useState(false);
-    
-    const { favorites, toggleFavorite } = useFavorites();
+    const { favorites, toggleFavorite } = useFavorites(items);
 
     useEffect(() => {
         loadItems();
@@ -52,35 +52,34 @@ function Gallery() {
 
     if (error) {
         return (
-            <div style={{ padding: '40px', textAlign: 'center', color: 'red' }}>
+            <div className="gallery-error">
                 <p>Помилка: {error}</p>
-            </div>
-        );
-    }
-
-    if (items.length === 0) {
-        return (
-            <div style={{ padding: '40px', textAlign: 'center' }}>
-                <p>Галерея порожня. Немає жодного товару.</p>
             </div>
         );
     }
 
     return (
         <div className="gallery-container">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 20px 0 20px' }}>
-                <h1 className="gallery-title" style={{ margin: 0 }}>Галерея інвентарю</h1>
-                <a href="/favorites" style={{ fontSize: '18px', textDecoration: 'none' }}>
+            <div className="gallery-header">
+                <h1>  Галерея інвентарю</h1>
+                <a href="/favorites" className="favorites-link">
                     ❤️ Улюблені ({favorites.length})
                 </a>
             </div>
-            <InventoryGallery 
-                items={items} 
-                onCardClick={handleCardClick}
-                onFavoriteToggle={toggleFavorite}
-                favorites={favorites}
-            />
-            
+
+            {items.length === 0 ? (
+                <div className="gallery-empty">
+                    <p>Галерея порожня. Немає жодного товару.</p>
+                </div>
+            ) : (
+                <InventoryGallery 
+                    items={items} 
+                    onCardClick={handleCardClick}
+                    onFavoriteToggle={toggleFavorite}
+                    favorites={favorites}
+                />
+            )}
+
             <InventoryQuickView 
                 item={selectedItem}
                 onClose={handleCloseQuickView}

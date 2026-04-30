@@ -64,9 +64,7 @@ function Favorites() {
         <div className="favorites-container">
             <div className="favorites-header">
                 <h1>Улюблені товари</h1>
-                <a href="/" className="back-link">
-                    ← Назад до галереї
-                </a>
+                <a href="/" className="back-link">← Назад до галереї</a>
             </div>
 
             {favoriteItems.length === 0 ? (

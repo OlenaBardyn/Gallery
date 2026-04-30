@@ -7,7 +7,7 @@ function Loading() {
             height: '100vh',
             gap: '12px',
             fontSize: '24px',
-            color: '#3b82f6'
+            color: '#f07c8f'
         }}>
             <span style={{ animation: 'bounce 1.4s infinite -0.32s' }}>●</span>
             <span style={{ animation: 'bounce 1.4s infinite -0.16s' }}>●</span>
